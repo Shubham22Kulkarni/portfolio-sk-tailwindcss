@@ -1,0 +1,560 @@
+/*-------------------------------- Fonts --------------------------------*/
+@font-face {
+	font-family: "aldrich";
+	font-weight: 400;
+	font-size: 16px;
+	src: url("../fonts/aldrich/Aldrich-Regular.ttf");
+}
+
+@font-face {
+	font-family: "starzone";
+	font-weight: 400;
+	font-size: 16px;
+	src: url("../fonts/starzone/Starzone.ttf");
+}
+
+@font-face {
+	font-family: "recharge";
+	font-weight: 700;
+	font-size: 16px;
+	src: url("../fonts/recharge/recharge-bold.ttf");
+}
+
+.aldrich {
+	font-family: "aldrich";
+	font-weight: 400;
+	font-size: 16px;
+}
+
+.starzone {
+	font-family: "starzone";
+	font-weight: 400;
+	font-size: 16px;
+}
+
+.recharge {
+	font-family: "recharge";
+	font-weight: 700;
+	font-size: 16px;
+}
+
+
+/*-------------------------------- Responsive --------------------------------*/
+
+
+
+/*-------------------------------- CSS Variables --------------------------------*/
+:root {
+	/* colors */
+	--primary-50: hsl(19, 80%, 50%);
+	--secondary-40: hsl(0, 0%, 40%);
+	--secondary-50: hsl(0, 0%, 50%);
+	--secondary-80: hsl(0, 0%, 80%);
+	--secondary-90: hsl(0, 0%, 90%);
+	--secondary-100: hsl(0, 0%, 100%);
+	--secondary-0: hsl(0, 0%, 0%);
+
+	/* font */
+	--body-font: "aldrich";
+	--second-font: "recharge";
+
+	--h1-font-size: 36px;
+	--h2-font-size: 28px;
+	--h3-font-size: 24px;
+	--large-font-size: 18px;
+	--normal-font-size: 16px;
+	--small-font-size: 14px;
+	--smaller-font-size: 12px;
+	--tiny-font-size: 10px;
+
+	--weight-400: 400;
+	--weight-500: 500;
+	--weight-600: 600;
+	--weight-700: 700;
+	--weight-800: 800;
+}
+
+.dark-theme {
+	--title-color: hsl(0, 0%, 100%);
+	--text-color: hsl(0, 0%, 80%);
+	--body-color: hsl(0, 0%, 7%);
+	--container-color: hsl(0, 1%, 17%);
+	--border-color: hsl(0, 0%, 15%);
+
+	--secondary-40: hsl(0, 0%, 100%);
+	--secondary-50: hsl(0, 0%, 80%);
+	--secondary-80: hsl(0, 0%, 15%);
+	--secondary-90: hsl(0, 1%, 20%);
+	--secondary-100: hsl(0, 0%, 10%);
+	--secondary-0: hsl(0, 0%, 100%);
+}
+
+
+/*-------------------------------- Body CSS --------------------------------*/
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	font-family: var(--body-font);
+	font-size: var(--normal-font-size);
+	font-weight: var(--weight-400);
+	background-color: var(--secondary-100);
+	color: var(--secondary-50);
+}
+
+.container {
+	padding: 0 20px;
+}
+
+h1,
+h2,
+h3,
+h4 {
+	color: var(--secondary-40);
+	font-family: var(--second-font);
+	font-weight: var(--weight-600);
+}
+
+ul {
+	list-style: none;
+}
+
+a {
+	text-decoration: none;
+}
+
+button,
+input,
+textarea {
+	background-color: transparent;
+	border: none;
+	outline: none;
+}
+
+.transition-all-ease {
+	transition: all 0.3s ease;
+}
+
+.form__control:focus {
+	-webkit-box-shadow: 0px 0px 0.5em 0px var(--primary-50);
+}
+
+.shadow-secondary {
+	-webkit-box-shadow: 0px 0px 0.5em 0px var(--secondary-0), 0px 0px 1em 0px var(--primary-50);
+}
+
+/*-------------------------------- Navbar --------------------------------*/
+.nav__menu {
+	background-color: transparent;
+	backdrop-filter: blur(25px);
+	-webkit-box-shadow: 0px 0px 0.5em 0px var(--secondary-0);
+	position: fixed;
+	inset-block: 0;
+	left: -100%;
+	width: 100%;
+	max-width: 300px;
+	padding: 60px 30px;
+	transition: all 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
+	z-index: 100;
+}
+
+.show-menu {
+	left: 0;
+}
+
+.nav__link {
+	display: flex;
+	align-items: center;
+	column-gap: 24px;
+	border-bottom: 1px solid var(--secondary-80);
+	padding: 12px;
+}
+
+.nav__icon,
+.nav__name {
+	color: var(--secondary-40);
+	font-size: 16px;
+}
+
+
+.nav__link:hover {
+	background-color: var(--primary-50);
+}
+
+.nav__link:hover .nav__icon,
+.nav__link:hover .nav__name {
+	color: var(--secondary-100);
+}
+
+.nav__name {
+	font-weight: var(--weight-500);
+}
+
+.active-nav .nav__icon,
+.active-nav .nav__name {
+	color: var(--primary-50);
+}
+
+
+.nav__toggle {
+	position: fixed;
+	top: 30px;
+	right: 30px;
+	width: 40px;
+	height: 40px;
+	border-radius: 5px;
+	-webkit-box-shadow: 0px 0px 0.2em 0px var(--secondary-0);
+	background-color: var(--secondary-100);
+	color: var(--primary-50);
+	border: 1px solid var(--primary-50);
+	cursor: pointer;
+	padding: 12px 10px;
+	z-index: 100;
+}
+
+.nav__toggle span {
+	display: block;
+	width: 20px;
+	height: 2px;
+	border-radius: 2px;
+	background-color: var(--primary-50);
+	margin-bottom: 5px;
+}
+
+.animate-toggle span:first-child {
+	transition: all 0.3s ease;
+	transform: rotate(38deg) translate(4px, 5px);
+}
+
+.animate-toggle span:nth-child(2) {
+	transition: all 0.3s ease;
+	display: none;
+}
+
+.animate-toggle span:last-child {
+	transition: all 0.3s ease;
+	transform: rotate(-38deg) translate(0px, -1px);
+}
+
+@media screen and (min-width: 1024px) {
+	.nav__menu {
+		all: unset;
+	}
+
+	/*
+	.nav__icon,
+	.nav__name {
+		color: var(--secondary-40);
+		font-size: 16px;
+	}
+	*/
+
+	.nav__toggle {
+		display: none;
+	}
+
+	.nav {
+		position: fixed;
+		inset-block: 0;
+		right: 30px;
+		display: flex;
+		align-items: center;
+		z-index: 100;
+	}
+
+	.nav__item {
+		margin-block: 20px;
+	}
+
+	.nav__link {
+		padding: 0;
+		border-bottom: none;
+		-webkit-box-shadow: 0px 0px 0.5em 0px var(--primary-50);
+		background-color: var(--secondary-100);
+		width: 50px;
+		height: 50px;
+		border-radius: 50%;
+		position: relative;
+	}
+
+	.nav__icon {
+		font-size: 20px;
+		margin-inline: auto;
+	}
+
+	.nav__name {
+		position: absolute;
+		top: 0;
+		right: 0;
+		background-color: var(--primary-50);
+		height: 100%;
+		line-height: 50px;
+		padding-inline: 30px 25px;
+		border-radius: 30px;
+		font-size: var(--small-font-size);
+		color: var(--secondary-100);
+		visibility: hidden;
+		z-index: -1;
+		transition: all 0.3s ease;
+	}
+
+	.nav__link:hover .nav__name {
+		right: 28px;
+		color: var(--secondary-100);
+		opacity: 1;
+		visibility: visible;
+		border-radius: 30px 0 0 30px;
+	}
+
+	.nav__link:hover,
+	.active-nav {
+		background-color: var(--primary-50);
+	}
+
+	.nav__link:hover .nav__icon,
+	.active-nav .nav__icon {
+		color: var(--secondary-100);
+	}
+}
+
+/*-------------------------------- Theme CSS --------------------------------*/
+.style__switcher {
+	position: fixed;
+	left: 0;
+	top: 10%;
+	backdrop-filter: blur(25px);
+	background-color: transparent;
+	width: 220px;
+	padding: 15px;
+	-webkit-box-shadow: 0px 0px 0.3em 0px var(--secondary-0);
+	z-index: 11;
+	transform: translateX(-100%);
+	transition: all 0.3s ease;
+}
+
+.show-switcher .style__switcher-toggler,
+.show-switcher .theme__toggler {
+	left: -100%;
+}
+
+.show-switcher {
+	transform: translateX(0);
+}
+
+.style__switcher,
+.style__switcher-toggler,
+.theme__toggler {
+	border-radius: 0 5px 5px 0;
+}
+
+.style__switcher-items {
+	display: grid;
+	grid-template-columns: repeat(5, 1fr);
+	column-gap: 4px;
+	row-gap: 8px;
+}
+
+.style__switcher-title,
+.style__switcher-toggler,
+.theme__toggler,
+.style__switcher-close {
+	color: hsl(0, 0%, 40%);
+}
+
+.style__switcher-title {
+	font-size: var(--small-font-size);
+	font-weight: var(--weight-600);
+	border-bottom: 1px solid hsl(0, 0%, 87%);
+	padding-bottom: 5px;
+	margin-bottom: 15px;
+}
+
+.theme__img {
+	width: 30px;
+	cursor: pointer;
+}
+
+.style__switcher-toggler,
+.theme__toggler {
+	position: absolute;
+	left: 100%;
+	background-color: var(--secondary-100);
+	height: 50px;
+	width: 50px;
+	font-size: var(--large-font-size);
+	cursor: pointer;
+	display: grid;
+	color: var(--secondary-0);
+	place-items: center;
+	-webkit-box-shadow: 0px 0px 0.3em 0px var(--secondary-0);
+}
+
+.style__switcher-toggler {
+	top: 10%;
+}
+
+.theme__toggler {
+	bottom: 10%;
+}
+
+.style__switcher-close {
+	cursor: pointer;
+	font-size: var(--h2-font-size);
+	position: absolute;
+	top: 2%;
+	right: 15px;
+}
+
+
+/*-------------------------------- Button CSS --------------------------------*/
+
+.button {
+	display: inline-block;
+	width: max-content;
+	color: var(--secondary-40);
+	-webkit-box-shadow: 0px 0px 0.5em 0px var(--primary-50);
+	border: 1px solid var(--primary-50);
+	padding: 15px 70px 15px 35px;
+	border-radius: 35px;
+	font-family: var(--second-font);
+	font-size: var(--small-font-size);
+	font-weight: var(--weight-500);
+	position: relative;
+	overflow: hidden;
+}
+
+.button:hover {
+	color: var(--secondary-100);
+}
+
+.button::before {
+	content: '';
+	position: absolute;
+	inset: 0;
+	background-color: var(--primary-50);
+	transform: translateX(100%);
+	z-index: -1;
+	transition: all 0.3s ease-out;
+}
+
+.button:hover::before {
+	transform: translateX(0);
+}
+
+.button__icon {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: var(--primary-50);
+	position: absolute;
+	inset-block: -2px;
+	right: 0;
+	width: 55px;
+	border-radius: 50px;
+	color: var(--secondary-100);
+	font-size: var(--large-font-size);
+}
+
+
+/*-------------------------------- Progress-circle --------------------------------*/
+.progress-grid-1 {
+	@media screen and (min-width:381px) and (max-width: 640px) {
+		grid-template-columns: repeat(2, 1fr);
+	}
+}
+
+.progress__circle {
+	width: 120px;
+	height: 120px;
+}
+
+.CircularProgressbar-path {
+	stroke: var(--primary-50) !important;
+	stroke-linecap: butt !important;
+}
+
+.CircularProgressbar-trail {
+	stroke: var(--secondary-90) !important;
+}
+
+.CircularProgressbar-text {
+	fill: var(--secondary-40) !important;
+	font-family: var(--second-font);
+	font-size: var(--large-font-size) !important;
+}
+
+
+
+/*-------------------------------- Resume --------------------------------*/
+
+.resume__item::before {
+	content: '';
+	position: absolute;
+	inset-block: 0;
+	left: 20px;
+	border-left: 2px solid var(--primary-50);
+}
+
+.resume__subtitle {
+	font-size: var(--large-font-size);
+	font-weight: var(--weight-500);
+	margin-block: 20px 10px;
+}
+
+.resume__subtitle span {
+	color: var(--secondary-50);
+	font-family: var(--body-font);
+	font-size: var(--small-font-size);
+	font-weight: var(--weight-600);
+	position: relative;
+	padding-left: 26px;
+}
+
+.resume__subtitle span::before {
+	content: '';
+	position: absolute;
+	left: 7px;
+	top: 9px;
+	width: 10px;
+	height: 2px;
+	background-color: var(--secondary-50);
+}
+
+
+/*-------------------------------- Portfolio --------------------------------*/
+.portfolio__item {
+	position: relative;
+	border-radius: 10px;
+	overflow: hidden;
+	max-width: 500px;
+}
+
+.portfolio__hover {
+	background-color: var(--primary-50);
+	position: absolute;
+	inset: 0;
+	display: grid;
+	cursor: pointer;
+	place-items: center;
+	opacity: 0;
+	transition: all 0.5s ease;
+}
+
+.portfolio__item:hover .portfolio__hover {
+	opacity: 1;
+}
+
+.portfolio__title {
+	color: white;
+	font-size: var(--large-font-size);
+	font-weight: var(--weight-500);
+	transform: translateY(-20px);
+	transition: all 0.5s ease;
+}
+
+.portfolio__item:hover .portfolio__title {
+	transform: translateY(0);
+}
