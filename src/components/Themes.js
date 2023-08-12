@@ -1,6 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react'
 import { themes } from '../data'
-import { FaCog } from 'react-icons/fa'
 import { RiPaintBrushFill } from 'react-icons/ri'
 import { BsMoonStars, BsSun } from 'react-icons/bs'
 import ThemeItem from './ThemeItem'

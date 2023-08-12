@@ -1,8 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react'
 import { links } from '../data';
 import { Link, useLocation } from 'react-router-dom';
-import { FaBars } from 'react-icons/fa';
-import { GrFormClose } from 'react-icons/gr';
 
 const Navbar = () => {
 	const menuRef = useRef()

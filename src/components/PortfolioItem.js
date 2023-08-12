@@ -1,6 +1,4 @@
 import React, { useEffect, useRef, useState } from 'react'
-import Close from '../images/assets/close.svg'
-import { CgCloseO } from 'react-icons/cg'
 
 const PortfolioItem = ({ img, title, details }) => {
 	const modalRef = useRef()

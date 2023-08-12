@@ -1,6 +1,5 @@
 import React from 'react'
 import { ImDroplet } from 'react-icons/im'
-import { BsDropletFill } from 'react-icons/bs'
 const ThemeItem = ({ color, img, changeColor }) => {
 	return (
 		<ImDroplet
@@ -10,14 +9,6 @@ const ThemeItem = ({ color, img, changeColor }) => {
 				changeColor(color)
 			}}
 		/>
-		// <img
-		// 	src={img}
-		// 	alt=''
-		// 	className='theme__img'
-		// 	onClick={() => {
-		// 		changeColor(color)
-		// 	}}
-		// />
 	)
 }
 

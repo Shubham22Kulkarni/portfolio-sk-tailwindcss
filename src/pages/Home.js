@@ -1,11 +1,8 @@
 import React, { useRef } from 'react'
 import { FaArrowRight } from 'react-icons/fa';
-import Profile from '../images/assets/profile.png';
+import Profile from '../images/assets/profile1.png';
 // import Profile from '../images/assets/home.jpg';
 import { Link } from 'react-router-dom'
-import About from './About';
-import Portfolio from './Portfolio';
-import Contact from './Contact';
 
 import { FaDownload } from 'react-icons/fa'
 import CV from '../images/assets/Shubham Kulkarni CV.pdf';
