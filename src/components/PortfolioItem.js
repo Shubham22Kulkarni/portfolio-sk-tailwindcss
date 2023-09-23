@@ -70,7 +70,11 @@ const PortfolioItem = ({ img, title, details }) => {
 										<span className="flex">{icon}</span>
 										<div className="text-primary-50 text-sm">
 											<span className="">{title}</span>
-											<span className=" font-semibold">{desc}</span>
+											{title.includes('Preview') ?
+												<a href={desc} target='blank' className='font-semibold hover:underline'>{desc}</a>
+												: <span className=" font-semibold">{desc}</span>
+											}
+
 										</div>
 									</li>
 								);
